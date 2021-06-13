@@ -31,6 +31,16 @@ button{
     justify-content: center;
     align-items: center;
 }
-img{
-    width: 500px;
+
+@media only screen and (max-width: 600px){
+    #grid {
+        display: grid;
+        grid-template-columns: auto;
+        width: 400px;
+        height: 400px;
+    }
+    .tile {
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        
+    }
 }
