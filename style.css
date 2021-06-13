@@ -5,10 +5,24 @@
     height: 1000px;
 }
 .tile {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(156, 116, 102);
     border: 1px solid rgba(0, 0, 0, 0.8);
     
 }
 .colored {
     background-color: black;
+}
+body {
+    background-color: burlywood;
+}
+button{
+    padding: 20px;
+    margin: 10px;
+    background-color: gray;
+}
+#buttons{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
