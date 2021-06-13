@@ -1,6 +1,7 @@
-function createTiles(x) {
-    document.getElementById("grid").style.gridTemplateColumns = 'repeat('+x+', auto)';
-    for(let i=0;i<(x*x);i++) {
+function createTiles() {
+    let numberTiles = prompt('How long and wide do you want your grid?')
+    document.getElementById("grid").style.gridTemplateColumns = 'repeat('+numberTiles+', auto)';
+    for(let i=0;i<(numberTiles*numberTiles);i++) {
         let grid = document.querySelector('#grid');
         let tile = document.createElement('div');
         tile.classList.add('tile');
@@ -9,14 +10,39 @@ function createTiles(x) {
     }
 }
 function changeColor() {
+    let tiles = document.querySelectorAll('.tile');
     tiles.forEach((x) => {
     x.addEventListener('mouseover', () => {x.classList.add('colored')}) 
   })
 }
 
-createTiles(16)
-let tiles = document.querySelectorAll('.tile');
+function resetTiles() {
+    let tiles = document.querySelectorAll('.tile');
+    let button = document.querySelector('#reset')
+    button.addEventListener('click', () => {
+        tiles.forEach((x) => {x.classList.remove('colored')})
+    })
+}
+function createNewGrid() {
+    let newgrid = document.querySelector('#newgrid')
+    newgrid.addEventListener('click', removeAllChildNodes(grid))
+}
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+
+createTiles()
+resetTiles()
 changeColor()
+let newgrid = document.querySelector('#newgrid')
+newgrid.addEventListener('click', ()=>{
+    removeAllChildNodes(grid)
+    createTiles()
+    changeColor()
+})
 
 
 
