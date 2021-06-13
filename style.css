@@ -1,8 +1,8 @@
 #grid {
     display: grid;
     grid-template-columns: auto;
-    width: 1000px;
-    height: 1000px;
+    width: 800px;
+    height: 800px;
 }
 .tile {
     background-color: rgb(156, 116, 102);
@@ -22,6 +22,11 @@ button{
 }
 #buttons{
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gridcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
