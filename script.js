@@ -9,12 +9,12 @@ function createTiles(x) {
     }
 }
 function changeColor() {
-    const tiles = document.querySelectorAll('.tile');
     tiles.forEach((x) => {
     x.addEventListener('mouseover', () => {x.classList.add('colored')}) 
   })
 }
 
+let tiles = document.querySelectorAll('.tile');
 createTiles(16)
 changeColor()
 
