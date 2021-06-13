@@ -1,12 +1,15 @@
 function createTiles() {
-    let numberTiles = prompt('How long and wide do you want your grid?')
+    let numberTiles = prompt('How long and wide do you want your grid? (max 100)')
+    if (numberTiles > 100) {
+        createTiles()
+    } else if (numberTiles <=100) {
     document.getElementById("grid").style.gridTemplateColumns = 'repeat('+numberTiles+', auto)';
     for(let i=0;i<(numberTiles*numberTiles);i++) {
         let grid = document.querySelector('#grid');
         let tile = document.createElement('div');
         tile.classList.add('tile');
         grid.appendChild(tile);
-
+    }
     }
 }
 function changeColor() {
@@ -42,6 +45,7 @@ newgrid.addEventListener('click', ()=>{
     removeAllChildNodes(grid)
     createTiles()
     changeColor()
+    resetTiles()
 })
 
 
