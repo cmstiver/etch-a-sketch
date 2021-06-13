@@ -14,8 +14,8 @@ function changeColor() {
   })
 }
 
-let tiles = document.querySelectorAll('.tile');
 createTiles(16)
+let tiles = document.querySelectorAll('.tile');
 changeColor()
 
 
